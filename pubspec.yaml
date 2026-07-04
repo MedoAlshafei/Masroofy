@@ -30,10 +30,36 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+
+  # State Management & Architectural Persistence
+  flutter_bloc: ^9.1.1
+  hydrated_bloc: ^11.0.0
+
+  # Dependency Injection Primitives
+  get_it: ^9.2.1
+  injectable: ^3.0.0
+
+  # Relational Local Storage Core
+  drift: ^2.14.0
+  sqlite3_flutter_libs: ^0.6.0+eol
+  path_provider: ^2.1.2
+
+  # On-Device & Remote Artificial Intelligence
+  google_generative_ai: ^0.4.0
+  google_mlkit_text_recognition: ^0.15.1
+
+  # Data presentation & utilities
+  fl_chart: ^1.2.0
+  intl: ^0.20.2
+  freezed_annotation: ^3.1.0
+  image_picker: ^1.0.7
+  speech_to_text: ^7.4.0
 
 dev_dependencies:
   flutter_test:
@@ -46,6 +72,16 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^6.0.0
 
+  # Reactive Generators & Code Compilation tools
+  build_runner: ^2.4.8
+  drift_dev: ^2.14.1
+  injectable_generator: ^3.0.2
+  freezed: ^3.2.5
+
+  # Enterprise Isolation & Behavior Testing
+  bloc_test: ^10.0.0
+  mockito: ^5.4.4
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -56,6 +92,7 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  generate: true # Crucial: This triggers automatic .arb localization file bindings
 
   # To add assets to your application, add an assets section, like this:
   # assets:
