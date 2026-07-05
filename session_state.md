@@ -3,8 +3,8 @@
 ## Where I Am
 
 - Phase: 1 — Local Data Setup & Clean Architecture
-- Current topic: Drift Database Configuration & Table Definitions
-- Last thing I did: Wrote app_database.dart with the core Transactions table schema
+- Current topic: Drift Database Configuration & Code Generation
+- Last thing I did: Corrected the casing typo from lazyDatabase to LazyDatabase and executed build_runner
 
 ## What I Built So Far
 
@@ -20,12 +20,12 @@ lib/core/database/app_database.dart
 
 ## My Last Question
 
-What's next?
+Good, but why do I have that error: The function 'lazyDatabase' isn't defined.
 
 ## What I Was Told
 
-Instructed to design the persistent relational database structural framework with Drift, isolating the core table schemas under core infrastructure layers.
+Explained that LazyDatabase is a class constructor rather than a standalone function, requiring a capitalized 'L' to resolve the Dart analyzer warning.
 
 ## What I'm Trying to Do Right Now
 
-Answering the database isolation thread performance question and prepping code generation for the Drift models.
+Waiting for build_runner to generate the underlying SQLite schema bindings cleanly.
