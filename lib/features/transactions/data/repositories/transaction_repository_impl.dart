@@ -13,10 +13,8 @@ class TransactionRepositoryImpl implements TransactionRepository {
 
   @override
   Future<List<TransactionEntity>> getAllTransactions() async {
-    // 1. Fetch the raw table rows from Drift
     final List<Transaction> rows = await _db.select(_db.transactions).get();
 
-    // 2. Map the Drift rows into Pure Domain Entities
     return rows
         .map(
           (row) => TransactionEntity(
@@ -34,7 +32,6 @@ class TransactionRepositoryImpl implements TransactionRepository {
 
   @override
   Future<void> saveTransaction(TransactionEntity transaction) async {
-    // Convert our clean domain entity into a Drift Companion object for insertion
     await _db
         .into(_db.transactions)
         .insert(
