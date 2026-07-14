@@ -13,6 +13,10 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
 import 'core/database/app_database.dart' as _i111;
+import 'features/transactions/data/repositories/transaction_repository_impl.dart'
+    as _i298;
+import 'features/transactions/domain/repositories/transaction_repository.dart'
+    as _i783;
 
 // initializes the registration of main-scope dependencies inside of GetIt
 _i174.GetIt init(
@@ -22,5 +26,8 @@ _i174.GetIt init(
 }) {
   final gh = _i526.GetItHelper(getIt, environment, environmentFilter);
   gh.lazySingleton<_i111.AppDatabase>(() => _i111.AppDatabase());
+  gh.lazySingleton<_i783.TransactionRepository>(
+    () => _i298.TransactionRepositoryImpl(gh<_i111.AppDatabase>()),
+  );
   return getIt;
 }
